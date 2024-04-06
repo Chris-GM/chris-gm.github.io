@@ -1,7 +1,20 @@
-* {
-  padding: 0;
-  margin: 0;
+:host ::ng-deep .p-menubar {
+  position: sticky;
+  z-index: 1;
+  background: color-mix(in srgb, var(--surface-100) 30%, transparent);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  //border: 1px solid rgba(255, 254, 254, 0.19);
+  border: 1px solid color-mix(in srgb, var(--surface-700) 10%, transparent);
 }
+
+:host ::ng-deep .p-dock-list-container {
+  background: none;
+  border: none;
+}
+
 svg {
   position: absolute;
   top: 0;
@@ -10,8 +23,6 @@ svg {
   height: 100%;
   box-sizing: border-box;
   display: block;
-  //background-color: #0e4166;
-  //background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
-  background-color: #082335;
+  background-color: var(--primary-900);
   background-image: linear-gradient(to bottom, rgba(67, 79, 88, 0.86), #082335);
 }

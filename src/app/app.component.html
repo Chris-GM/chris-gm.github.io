@@ -1,6 +1,14 @@
 <body>
-  <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-       xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
+  <p-menubar [model]="items"></p-menubar>
+  <svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    width="100%"
+    height="100%"
+    viewBox="0 0 1600 900"
+    preserveAspectRatio="xMidYMax slice">
     <defs>
       <linearGradient id="bg">
         <stop offset="0%" style="stop-color:rgba(130, 158, 249, 0.06)"></stop>
@@ -61,7 +69,12 @@
       </use>
     </g>
   </svg>
-</body>
 
+  <p-dock [model]="dock_items" position="bottom">
+    <ng-template pTemplate="item" let-item>
+      <span [class]="item.icon" style="font-size: 2rem" (click)="some(item.toUrl)"></span>
+    </ng-template>
+  </p-dock>
+</body>
 
 <router-outlet />
