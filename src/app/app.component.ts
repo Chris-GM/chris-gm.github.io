@@ -8,11 +8,25 @@ import {MenuItem, PrimeIcons} from "primeng/api";
 import {AvatarModule} from "primeng/avatar";
 import {MenubarModule} from "primeng/menubar";
 import {DockModule} from "primeng/dock";
+import {CardModule} from "primeng/card";
+import {LogoComponent} from "./components/logo/logo.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ButtonModule, ToolbarModule, InputTextModule, SplitButtonModule, AvatarModule, MenubarModule, DockModule],
+  imports: [
+    RouterOutlet,
+    ButtonModule,
+    ToolbarModule,
+    InputTextModule,
+    SplitButtonModule,
+    AvatarModule,
+    MenubarModule,
+    DockModule,
+    CardModule,
+    CardModule,
+    LogoComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -22,17 +36,26 @@ export class AppComponent implements OnInit {
   dock_items: MenuItem[] | undefined | null;
 
   ngOnInit() {
-    this.items = [{label: "about"}, {label: "projects"}];
+    this.items = [
+      {
+        label: "about",
+      },
+      {
+        label: "projects",
+      }
+    ];
     this.dock_items = [
       {
         label: "Linked-in",
         icon: PrimeIcons.LINKEDIN,
-        toUrl: "https://www.linkedin.com/in/christean-g-860b3815a"
+        toUrl: "https://www.linkedin.com/in/christean-g-860b3815a",
+        style: {'color': '#0077B5', 'font-size': '2.5rem'}
       },
       {
         label: "Github",
         icon: PrimeIcons.GITHUB,
-        toUrl: "https://github.com/Chris-GM"
+        toUrl: "https://github.com/Chris-GM",
+        style: {'color': '#171515', 'font-size': '2.5rem'}
       },
     ];
   }
