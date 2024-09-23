@@ -3,7 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import {ButtonModule} from "primeng/button";
 import {ToolbarModule} from "primeng/toolbar";
 import {InputTextModule} from "primeng/inputtext";
-import {SplitButtonModule} from "primeng/splitbutton";
 import {MenuItem, PrimeIcons} from "primeng/api";
 import {AvatarModule} from "primeng/avatar";
 import {MenubarModule} from "primeng/menubar";
@@ -19,7 +18,6 @@ import {LogoComponent} from "./components/logo/logo.component";
     ButtonModule,
     ToolbarModule,
     InputTextModule,
-    SplitButtonModule,
     AvatarModule,
     MenubarModule,
     DockModule,
@@ -49,13 +47,13 @@ export class AppComponent implements OnInit {
         label: "Linked-in",
         icon: PrimeIcons.LINKEDIN,
         toUrl: "https://www.linkedin.com/in/christean-g-860b3815a",
-        style: {'color': '#0077B5', 'font-size': '2.5rem'}
+        style: {'font-size': '2.5rem'}
       },
       {
         label: "Github",
         icon: PrimeIcons.GITHUB,
         toUrl: "https://github.com/Chris-GM",
-        style: {'color': '#171515', 'font-size': '2.5rem'}
+        style: {'font-size': '2.5rem'}
       },
     ];
   }
