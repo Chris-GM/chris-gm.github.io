@@ -9,6 +9,9 @@ import {MenubarModule} from "primeng/menubar";
 import {DockModule} from "primeng/dock";
 import {CardModule} from "primeng/card";
 import {LogoComponent} from "./components/logo/logo.component";
+import {WaveComponent} from "./components/wave/wave.component";
+import {AboutComponent} from "./components/about/about.component";
+import {environment} from "../environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -23,7 +26,9 @@ import {LogoComponent} from "./components/logo/logo.component";
     DockModule,
     CardModule,
     CardModule,
-    LogoComponent
+    LogoComponent,
+    WaveComponent,
+    AboutComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -46,19 +51,19 @@ export class AppComponent implements OnInit {
       {
         label: "Linked-in",
         icon: PrimeIcons.LINKEDIN,
-        toUrl: "https://www.linkedin.com/in/christean-g-860b3815a",
-        style: {'font-size': '2.5rem'}
+        toUrl: environment.linkedInUrl,
+        // style: {'font-size': '2.5rem'}
       },
       {
         label: "Github",
         icon: PrimeIcons.GITHUB,
-        toUrl: "https://github.com/Chris-GM",
-        style: {'font-size': '2.5rem'}
+        toUrl: environment.githubUrl,
+        // style: {'font-size': '2.5rem'}
       },
     ];
   }
 
-  some(url: string) {
+  openUrl(url: string) {
     open(url)
   }
 }

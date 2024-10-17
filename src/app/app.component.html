@@ -2,97 +2,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <p-menubar [model]="items"></p-menubar>
-  <p-card header="Hello there!" class="relative left-0 m-4 z-1">
-    <div class="m-0">
-      <div class="flex flex-wrap-reverse justify-content-evenly align-items-center h-auto">
-        <app-logo class="flex-0 w-screen sm:w-5"></app-logo>
-        <p-avatar
-          class="flex-0 w-screen sm:w-5 inline-flex justify-content-center"
-          image="assets/Christean%20Ghobrial.jpg"
-          styleClass="p-0 w-6 h-auto"
-          shape="circle"></p-avatar>
-      </div>
-      <p class="w-full sm:w-8 m-0 sm:m-3">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
-        numquam
-        deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate
-        neque
-        quas!
-      </p>
-    </div>
-  </p-card>
 
-  <svg version="1.1"
-     class="wave fixed left-0 bottom-0 w-full h-full z-0"
-     xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink"
-     viewBox="0 0 1600 900"
-     preserveAspectRatio="xMidYMax slice">
-    <defs>
-      <linearGradient id="bg">
-        <stop offset="0%" style="stop-color:var(--primary-300)"></stop>
-        <stop offset="50%" style="stop-color:var(--primary-600)"></stop>
-        <stop offset="100%" style="stop-color:var(--primary-900)"></stop>
-      </linearGradient>
-      <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
-    s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z"/>
-    </defs>
-    <g>
-      <use xlink:href='#wave' opacity=".3">
-        <animateTransform
-          attributeName="transform"
-          attributeType="XML"
-          type="translate"
-          dur="12s"
-          calcMode="spline"
-          values="270 120; -334 140; 270 120"
-          keyTimes="0; .5; 1"
-          keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
-          repeatCount="indefinite"/>
-      </use>
-      <use xlink:href='#wave' opacity=".4">
-        <animateTransform
-          attributeName="transform"
-          attributeType="XML"
-          type="translate"
-          dur="10s"
-          calcMode="spline"
-          values="220 180; -300 130; 220 180"
-          keyTimes="0; .3; 1"
-          keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
-          repeatCount="indefinite"/>
-      </use>
-      <use xlink:href='#wave' opacity=".5">
-        <animateTransform
-          attributeName="transform"
-          attributeType="XML"
-          type="translate"
-          dur="8s"
-          calcMode="spline"
-          values="-270 230;243 220;-270 230"
-          keyTimes="0; .6; 1"
-          keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
-          repeatCount="indefinite"/>
-      </use>
-      <use xlink:href='#wave' opacty=".9">
-        <animateTransform
-          attributeName="transform"
-          attributeType="XML"
-          type="translate"
-          dur="7s"
-          calcMode="spline"
-          values="0 230;-140 200;0 230"
-          keyTimes="0; .4; 1"
-          keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
-          repeatCount="indefinite"/>
-      </use>
-    </g>
-  </svg>
+  <p-menubar [model]="items">
+    <ng-template pTemplate="item" let-item>
+      <ng-container>
+        <a [routerLink]="item.route" class="p-menuitem-link">
+          <span [class]="item.icon"></span>
+          <span class="ml-2">{{ item.label }}</span>
+        </a>
+      </ng-container>
+    </ng-template>
+  </p-menubar>
 
-  <p-dock [model]="dock_items" position="bottom" styleClass="bottom-0 fixed">
+  <app-about></app-about>
+  <app-wave></app-wave>
+
+  <p-dock [model]="dock_items" position="bottom" styleClass="bottom-0 relative">
     <ng-template pTemplate="itemicon" let-item>
-      <span [class]="item.icon" [style]="item.style" (click)="some(item.toUrl)"></span>
+      <span class="{{item.icon}} text-5xl sm:text-3xl" (click)="openUrl(item.toUrl)"></span>
     </ng-template>
   </p-dock>
 
