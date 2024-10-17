@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {ButtonModule} from "primeng/button";
 import {ToolbarModule} from "primeng/toolbar";
 import {InputTextModule} from "primeng/inputtext";
@@ -17,6 +17,8 @@ import {environment} from "../environments/environment";
   selector: 'app-root',
   standalone: true,
   imports: [
+    RouterLink,
+    RouterLinkActive,
     RouterOutlet,
     ButtonModule,
     ToolbarModule,
@@ -42,9 +44,11 @@ export class AppComponent implements OnInit {
     this.items = [
       {
         label: "about",
+        route: '/about'
       },
       {
         label: "projects",
+        route: '/projects'
       }
     ];
     this.dock_items = [

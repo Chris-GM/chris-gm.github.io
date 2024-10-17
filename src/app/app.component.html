@@ -14,7 +14,7 @@
     </ng-template>
   </p-menubar>
 
-  <app-about></app-about>
+  <router-outlet/>
   <app-wave></app-wave>
 
   <p-dock [model]="dock_items" position="bottom" styleClass="bottom-0 relative">
@@ -22,6 +22,4 @@
       <span class="{{item.icon}} text-5xl sm:text-3xl" (click)="openUrl(item.toUrl)"></span>
     </ng-template>
   </p-dock>
-
-  <router-outlet/>
 <!--</div>-->
