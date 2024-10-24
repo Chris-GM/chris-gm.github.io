@@ -68,6 +68,6 @@ export class AppComponent implements OnInit {
   }
 
   openUrl(url: string) {
-    open(url)
+    open(url);
   }
 }
