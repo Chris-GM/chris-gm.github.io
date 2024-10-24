@@ -1,1 +1,26 @@
-<p>projects works!</p>
+<p-card header="Some projects" class="relative left-0 m-4 z-1">
+  <div class="m-0">
+    <p-panel [toggleable]="true" toggler="header">
+      <ng-template pTemplate="header">
+        <div class="flex align-items-center gap-2 w-full justify-content-between">
+          <span class="font-bold">
+            {{ projects[0].name }}
+          </span>
+          <p-button
+            label=" "
+            outlined="true"
+            icon="pi pi-arrow-up-right"
+            iconPos="right"
+            (onClick)="openUrl(projects[0].url)">
+            <span class="pi pi-github"></span>
+          </p-button>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="content">
+        <p class="m-0">
+          {{ projects[0].description }}
+        </p>
+      </ng-template>
+    </p-panel>
+  </div>
+</p-card>
