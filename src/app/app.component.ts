@@ -49,6 +49,10 @@ export class AppComponent implements OnInit {
       {
         label: "projects",
         route: '/projects'
+      },
+      {
+        label: "legal notice",
+        route: '/legal'
       }
     ];
     this.dock_items = [
