@@ -7,7 +7,7 @@
     <p-divider align="left" type="solid">
       <b id="divider">Contact information</b>
     </p-divider>
-    <span class="pi pi-phone"></span> {{ phoneNr }}<br>
-    <span class="pi pi-at"></span> {{ email }}
+    <span class="pi pi-phone"></span><a [href]="'tel:'+phoneNr" class="ml-2">{{ phoneNr }}</a><br>
+    <span class="pi pi-at"></span> <a [href]="'mailto:'+email" class="ml-2">{{ email }}</a>
   </div>
 </p-card>
