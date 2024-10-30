@@ -4,4 +4,5 @@ export const environment = {
   githubUrl: "https://github.com/Chris-GM",
   phoneNr: "+43 676/77 26 203",
   email: "christeang01@gmail.com",
+  tugLink: "https://www.tugracing.at",
 };

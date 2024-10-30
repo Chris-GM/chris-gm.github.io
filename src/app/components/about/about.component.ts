@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {AvatarModule} from "primeng/avatar";
 import {CardModule} from "primeng/card";
 import {LogoComponent} from "../logo/logo.component";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-about',
@@ -16,4 +17,5 @@ import {LogoComponent} from "../logo/logo.component";
 })
 export class AboutComponent {
   age = new Date(new Date().getTime() - new Date("2000-05-05T00:00").getTime()).getUTCFullYear() - 1970;
+  tugLink = environment.tugLink;
 }
