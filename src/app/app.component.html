@@ -14,12 +14,12 @@
     </ng-template>
   </p-menubar>
 
-  <router-outlet/>
-  <app-wave></app-wave>
+  <router-outlet class="z-5"/>
+  <app-wave class="z-0"></app-wave>
 
   <p-dock [model]="dock_items" position="bottom" styleClass="bottom-0 relative">
     <ng-template pTemplate="itemicon" let-item>
-      <span class="{{item.icon}} text-5xl sm:text-3xl" (click)="openUrl(item.toUrl)"></span>
+      <span class="{{item.icon}} text-5xl sm:text-3xl cursor-pointer" (click)="openUrl(item.toUrl)"></span>
     </ng-template>
   </p-dock>
 <!--</div>-->

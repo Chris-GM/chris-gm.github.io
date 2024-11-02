@@ -3,15 +3,17 @@ import {AvatarModule} from "primeng/avatar";
 import {CardModule} from "primeng/card";
 import {LogoComponent} from "../logo/logo.component";
 import {environment} from "../../../environments/environment";
+import {Button} from "primeng/button";
 
 @Component({
   selector: 'app-about',
   standalone: true,
-    imports: [
-        AvatarModule,
-        CardModule,
-        LogoComponent
-    ],
+  imports: [
+    AvatarModule,
+    CardModule,
+    LogoComponent,
+    Button
+  ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
